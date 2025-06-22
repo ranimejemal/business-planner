@@ -1,13 +1,7 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { createClient } from "@supabase/supabase-js";
 import { toast } from "@/hooks/use-toast";
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
-);
 
 interface PaymentButtonProps {
   className?: string;
@@ -21,6 +15,23 @@ const PaymentButton = ({ className, children }: PaymentButtonProps) => {
     setIsLoading(true);
     
     try {
+      // Check if Supabase is configured
+      const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
+      const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+      
+      if (!supabaseUrl || !supabaseAnonKey) {
+        toast({
+          title: "Setup Required",
+          description: "Please configure Supabase integration to enable payments. Check the project settings.",
+          variant: "destructive",
+        });
+        return;
+      }
+
+      // Dynamically import and create Supabase client only when needed
+      const { createClient } = await import("@supabase/supabase-js");
+      const supabase = createClient(supabaseUrl, supabaseAnonKey);
+
       const { data: { session } } = await supabase.auth.getSession();
       
       if (!session) {
