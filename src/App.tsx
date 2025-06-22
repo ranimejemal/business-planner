@@ -10,6 +10,7 @@ import Buy from "./pages/Buy";
 import Features from "./pages/Features";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
+import PaymentSuccess from "./pages/PaymentSuccess";
 import PlannerDashboard from "./pages/planner/Dashboard";
 import PlannerDaily from "./pages/planner/Daily";
 import PlannerWeekly from "./pages/planner/Weekly";
