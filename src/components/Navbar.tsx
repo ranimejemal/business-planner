@@ -21,11 +21,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2" aria-label="Business Planner Home">
-            <div className="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center" role="img" aria-label="Sparkle icon">
-              <span className="text-black font-bold text-lg">✨</span>
+          <Link to="/" className="flex items-center space-x-2" aria-label="Tunisian Success Partners Home">
+            <div className="w-8 h-8 bg-yellow-400 rounded-lg flex items-center justify-center" role="img" aria-label="Success icon">
+              <span className="text-black font-bold text-lg">🇹🇳</span>
             </div>
-            <span className="font-bold text-xl gradient-text">Business Planner</span>
+            <span className="font-bold text-xl gradient-text">Tunisian Success Partners</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -41,7 +41,7 @@ const Navbar = () => {
               </Link>
             ))}
             <PaymentButton className="btn-yellow">
-              Buy Now - $4.99
+              Get Business Planner - $4.99
             </PaymentButton>
           </div>
 
@@ -77,7 +77,7 @@ const Navbar = () => {
               ))}
               <div className="pt-2">
                 <PaymentButton className="btn-yellow w-full">
-                  Buy Now - $4.99
+                  Get Business Planner - $4.99
                 </PaymentButton>
               </div>
             </div>
